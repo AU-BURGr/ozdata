@@ -9,5 +9,8 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/jonocarroll/ozdata
-BugReports: https://github.com/jonocarroll/ozdata/issues
+URL: https://github.com/AU-BURGr/ozdata
+BugReports: https://github.com/AU-BURGr/ozdata/issues
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
