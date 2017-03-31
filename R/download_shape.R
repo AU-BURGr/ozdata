@@ -4,20 +4,28 @@
 #' .shp file.
 #'
 #' @param url path to zip file to be downloaded.
+#' @param output_type select from "sf" for simple format or "shape" for shape
+#'   file.
 #'
 #' @return
 #' @export
 #'
 #' @examples
-download_shape <- function(url) {
+download_shape <- function(url, output_type = "sf") {
     tmp_dir <- "./cache"
     dir.create(tmp_dir, F, T)
     tmp_file <- file.path(tmp_dir, "file.zip")
-    download.file(url, tmp_file)
-    unzip(tmp_file, exdir = tmp_dir, junkpaths = TRUE)
+    utils::download.file(url, tmp_file)
+    utils::unzip(tmp_file, exdir = tmp_dir, junkpaths = TRUE)
     shape_file <- list.files(path = tmp_dir, pattern = ".shp$")
-    shape_points <- maptools::readShapePoints(file.path(tmp_dir, shape_file))
+
+    if (output_type == "sf") {
+        output <- sf::st_read(file.path(tmp_dir, shape_file))
+    } else if (output_type == "shape") {
+        output <- maptools::readShapePoints(file.path(tmp_dir, shape_file))
+    }
+
     unlink(tmp_dir, recursive = TRUE)
 
-    return(shape_points)
+    return(output)
 }
