@@ -9,8 +9,15 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Imports:
+  methods,
+  ckanr,
+  sf
+Depends: R (>= 3.1.0)
+Suggests:
+  knitr,
+  rmarkdown
 URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
-Suggests: knitr,
-    rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 6.0.1
