@@ -16,6 +16,7 @@ Encoding: UTF-8
 LazyData: true
 Imports:
   methods,
+  tibble,
   ckanr,
   sf
 Depends: R (>= 3.1.0)
