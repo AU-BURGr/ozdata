@@ -1,14 +1,20 @@
 #' Download shape file
 #'
-#' Function for downloading shape file. Downloads zip file, unzips and loads
+#' Function for downloading shape files. Downloads zip file, unzips and loads
 #' .shp file.
 #'
 #' @param url path to zip file to be downloaded.
+#'
+#' @author Cameron Roach
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' ckanr_setup("http://www.data.gov.au")
+#' url <- package_show('062801f2-dcf9-4a2d-b65b-52f20d4da721', as = 'table')$resources[["url"]]
+#' shape <- download_shape(url)
+#'
 download_shape <- function(url) {
     tmp_dir <- "./cache"
     dir.create(tmp_dir, F, T)
