@@ -16,6 +16,7 @@
 # resources, tags, groups, organization, name, url, notes, owner_org,
 # data_state, title, contact_info
 
+ozdata_user_input <- function(){
 
 library(shiny)
 
@@ -24,3 +25,4 @@ response <- utils::menu(c("Yes", "No"), title="Do you want this?", graphics = TR
 # Input keyword
 ?menu
 
+}  # end 'ozdata_user_input
