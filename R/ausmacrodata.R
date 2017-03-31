@@ -70,7 +70,7 @@ ausmacro <- function(dataset, format=c("ts","tibble"), ...)
                 start=c(years[1], match(seasons[1], useasons)))
         }
         else
-            stop("Not sure what to do know")
+            stop("Not sure what to do now")
         return(y)
     }
 }
