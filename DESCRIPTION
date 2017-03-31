@@ -3,26 +3,31 @@ Type: Package
 Title: Collect Australian data sets and work with them
 Version: 0.0.9000
 Authors@R: c(
- person("Jonathan", "Carroll", role = "aut", comment = "@jonocarroll"),
+ person("Jonathan", "Carroll", role = c("aut", "cre"), comment = "@jonocarroll", email = "rpkg@jcarroll.com.au"),
  person("Maria", "Dmitrijeva", role = "aut", comment = "@marianess"),
  person("Jeff", "Hanson", role = "aut", comment = "@jeffreyhanson"),
  person("Rob", "Hyndman", role = "aut", comment = "@robjhyndman"),
  person("Simon", "Lyons", role = "aut", comment = "@SimonLyons"),
- person("Cameron", "Roach", role = c("aut", "cre"), comment = "@camroach87"),
+ person("Cameron", "Roach", role = "aut", comment = "@camroach87"),
  person("Matt", "Sutton", role = "aut", comment = "@matt-sutton"))
 Description: Obtain data from data.gov.au and ozmacrodata.org, process it, plot it.
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
-Imports:
+Imports: 
   methods,
+  tibble,
   ckanr,
   sf
 Depends: R (>= 3.1.0)
-Suggests:
+Suggests: 
   knitr,
   rmarkdown
 URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
+Collate:     'aaa.R'
+    'ausmacrodata.R'
+    'internal.R'
+    'oz_datasets.R'
