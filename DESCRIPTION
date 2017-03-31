@@ -29,11 +29,11 @@ URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
-Collate:
+Collate: 
     'aaa.R'
     'ausmacrodata.R'
     'internal.R'
     'data.R'
     'download_oz_metadata.R'
-    'download_shape.R'
+    'download_shapefile.R'
     'search_interface.R'
