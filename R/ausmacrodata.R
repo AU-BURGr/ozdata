@@ -10,6 +10,7 @@
 #'
 #' @author Rob J Hyndman
 #'
+#' @export
 #' @examples
 #' y <- ausmacro("http://ausmacrodata.org/series.php?id=gdpcknaasaq")
 #' plot(y)
@@ -20,7 +21,7 @@ ausmacro <- function(dataset, format=c("ts","tibble"), ...)
     format <- match.arg(format)
 
     # Find last occurrence of "=" in dataset
-    id <- tail(strsplit(dataset, "=")[[1]],1)
+    id <- utils::tail(strsplit(dataset, "=")[[1]],1)
 
     # Create URL
     url <- paste("http://ausmacrodata.org/series.php?id=", id, sep="")
@@ -55,7 +56,7 @@ ausmacro <- function(dataset, format=c("ts","tibble"), ...)
             years <-  as.numeric(unlist(lapply(dates, function(x)x[[3]])))
             tblyears <- table(years)
             daysperyear <- max(tblyears)
-            y <- ts(y[['value']],
+            y <- stats::ts(y[['value']],
                     frequency=daysperyear,
                     start=c(years[1]-1 + tblyears[1]/daysperyear))
         }
@@ -65,7 +66,7 @@ ausmacro <- function(dataset, format=c("ts","tibble"), ...)
             seasons <- as.numeric(unlist(lapply(dates, function(x)x[[1]])))
             years <-  as.numeric(unlist(lapply(dates, function(x)x[[2]])))
             useasons <- sort(unique(as.numeric(seasons)))
-            y <- ts(y[['value']],
+            y <- stats::ts(y[['value']],
                 frequency=length(useasons),
                 start=c(years[1], match(seasons[1], useasons)))
         }
