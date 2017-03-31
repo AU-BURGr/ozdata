@@ -2,11 +2,18 @@ Package: ozdata
 Type: Package
 Title: Collect Australian data sets and work with them
 Version: 0.0.9000
-Author: ozdata team, ozunconf17
-Maintainer: Jonathan Carroll <rpkg@jcarroll.com.au>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: c(
+ person("Cameron", "Roach", role = "aut", email = "@camroach87"),
+ person("Jeff", "Hanson", role = "aut", email = "@jeffreyhanson"),
+ person("Jonathan", "Carroll", role = "aut", email = "@jonocarroll"),
+ person("Maria", "Dmitrijeva", role = "aut", email = "@marianess"),
+ person("Matt", "Sutton", role = "aut", email = "@matt-sutton"),
+ person("Rob", "Hyndman", role = "aut", email = "@robjhyndman"),
+ person("Simon", "Lyons", role = "aut", email = "@SimonLyons")
+)
+aintainer: Jonathan Carroll <rpkg@jcarroll.com.au>
+Description: Obtain data from `data.gov.au` and `ozmacrodata.org`, process it, plot it.
+License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/AU-BURGr/ozdata
