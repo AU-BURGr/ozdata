@@ -80,5 +80,8 @@ ozdata_usr_srch <- function(){
 
     # Delete all temporary files and directories
 
+    unlink(tmp_dir, force = TRUE)
+    tmp_dir
+    getwd()
 }  # end 'ozdata_user_input
 
