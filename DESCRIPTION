@@ -10,7 +10,7 @@ Authors@R: c(
  person("Simon", "Lyons", role = "aut", comment = "@SimonLyons"),
  person("Cameron", "Roach", role = "aut", comment = "@camroach87"),
  person("Matt", "Sutton", role = "aut", comment = "@matt-sutton"))
-Description: Obtain data from data.gov.au and ozmacrodata.org, process it, plot it.
+Description: Obtain data from data.gov.au and ausmacrodata.org, process it, plot it.
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
@@ -36,3 +36,4 @@ Collate:
     'data.R'
     'download_oz_metadata.R'
     'download_shape.R'
+    'search_interface.R'
