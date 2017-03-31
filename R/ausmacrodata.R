@@ -5,7 +5,7 @@
 #' @param dataset a URL for a specific data set on ausmacrodata.org, or an id for a data set.
 #' @param format The desired format for the object to be returned. Possible
 #' values are \code{ts}, \code{xts} and \code{tibble}. By default a \code{ts}
-#' object is returned for quarterly, monthly or annual data, and a
+#' object is returned for quarterly, monthly or annual data, and an
 #' \code{xts} object is returned for daily data.
 #' @param ... Other arguments, not currently used.
 #'
@@ -13,10 +13,13 @@
 #'
 #' @export
 #' @examples
+#' # Read quarterly Australia GDP using full URL
 #' y <- get_ausmacrodata("http://ausmacrodata.org/series.php?id=gdpcknaasaq")
 #' plot(y)
-#' library(xts)
+#'
+#' # Read daily cash rate target interest rate using only series ID
 #' z <- get_ausmacrodata('crtdoirymmdir')
+#' library(xts)
 #' plot(z)
 
 get_ausmacrodata <- function(dataset, format, ...)

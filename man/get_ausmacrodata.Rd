@@ -20,10 +20,13 @@ object is returned for quarterly, monthly or annual data, and a
 \code{get_ausmacrodata} returns a time series data set from \url{ausmacrodata.org}.
 }
 \examples{
+# Read quarterly Australia GDP using full URL
 y <- get_ausmacrodata("http://ausmacrodata.org/series.php?id=gdpcknaasaq")
 plot(y)
-library(xts)
+
+# Read daily cash rate target interest rate using only series ID
 z <- get_ausmacrodata('crtdoirymmdir')
+library(xts)
 plot(z)
 }
 \author{
