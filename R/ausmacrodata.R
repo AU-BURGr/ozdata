@@ -1,15 +1,26 @@
-# Read data from ausmacrodata.org
-# x = id or URL
-# Example:
-#y <- ausmacro("http://ausmacrodata.org/series.php?id=dierd2per")
-#plot(y)
+#' Read data from ausmacrodata.org
+#'
+#' \code{ausmacro} returns a data set from \url{ausmacrodata.org}.
+#' By default, it will return a time series (a `ts` object), although
+#' a `tibble` is also possible (and probably preferable for daily data).
+#'
+#' @param dataset a URL for a specific data set on ausmacrodata.org, or an id for a data set.
+#' @param format The desired format for the object to be returned.
+#' @param ... Other arguments, not currently used.
+#'
+#' @author Rob J Hyndman
+#'
+#' @examples
+#' y <- ausmacro("http://ausmacrodata.org/series.php?id=gdpcknaasaq")
+#' plot(y)
+#' z < ausmacro("gdpcknaasaq")
 
-ausmacro <- function(x, format=c("ts","tibble"), ...)
+ausmacro <- function(dataset, format=c("ts","tibble"), ...)
 {
     format <- match.arg(format)
 
-    # Find last occurrence of "=" in x
-    id <- tail(strsplit(x, "=")[[1]],1)
+    # Find last occurrence of "=" in dataset
+    id <- tail(strsplit(dataset, "=")[[1]],1)
 
     # Create URL
     url <- paste("http://ausmacrodata.org/series.php?id=", id, sep="")
