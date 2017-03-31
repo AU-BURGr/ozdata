@@ -27,3 +27,7 @@ URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
+Collate: 
+    'aaa.R'
+    'internal.R'
+    'datasets.R'

@@ -1,10 +1,13 @@
 #' @include internal.R
+NULL
 
 #' Datasets
 #'
 #' List all available datasets.
 #'
 #' @return \code{link[tibble]{tibble}}
+#'
+#' @export
 datasets <- function() {
   # set up api access
   ckanr::ckanr_setup(url = "data.gov.au")
