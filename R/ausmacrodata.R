@@ -13,7 +13,7 @@
 #' @examples
 #' y <- ausmacro("http://ausmacrodata.org/series.php?id=gdpcknaasaq")
 #' plot(y)
-#' z < ausmacro("gdpcknaasaq")
+#' z <- ausmacro("gdpcknaasaq")
 
 ausmacro <- function(dataset, format=c("ts","tibble"), ...)
 {
