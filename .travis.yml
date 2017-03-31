@@ -36,6 +36,7 @@ brew_packages:
 
 r_packages:
   - covr
+  - rgdal
   - rmarkdown
   - testthat
 
