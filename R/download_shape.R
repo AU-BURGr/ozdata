@@ -9,7 +9,7 @@
 #'
 #' @author Cameron Roach
 #'
-#' @return
+#' @return returns either a sf or shape data frame object.
 #' @export
 #'
 #' @examples
