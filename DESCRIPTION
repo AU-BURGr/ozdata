@@ -1,0 +1,13 @@
+Package: ozdata
+Type: Package
+Title: Collect Australian data sets and work with them
+Version: 0.0.9000
+Author: ozdata team, ozunconf17
+Maintainer: Jonathan Carroll <rpkg@jcarroll.com.au>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/jonocarroll/ozdata
+BugReports: https://github.com/jonocarroll/ozdata/issues
