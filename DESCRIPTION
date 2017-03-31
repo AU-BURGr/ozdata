@@ -16,8 +16,15 @@ Description: Obtain data from `data.gov.au` and `ozmacrodata.org`, process it, p
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
+Imports:
+  methods,
+  ckanr,
+  sf
+Depends: R (>= 3.1.0)
+Suggests:
+  knitr,
+  rmarkdown
 URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
-Suggests: knitr,
-    rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 6.0.1

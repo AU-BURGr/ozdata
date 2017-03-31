@@ -1,0 +1,51 @@
+language: r
+dist: trusty
+sudo: true
+
+r:
+  - release
+  - devel
+
+os:
+  - linux
+  - osx
+
+env:
+  global:
+    - R_LIBS="http://cran.rstudio.com"
+    - _R_CHECK_FORCE_SUGGESTS_=FALSE
+    - RGL_USE_NULL=TRUE
+
+warnings_are_errors: true
+
+apt_packages:
+  - gdal-bin
+  - libgdal-dev
+  - libgdal1-dev
+  - libproj-dev
+  - libgeos-dev
+  - libgeos-c1
+  - curl
+  - libssh2-1-dev
+  - libudunits2-dev
+  - qpdf
+
+brew_packages:
+  - Caskroom/cask/xquartz
+  - ghostscript
+
+r_packages:
+  - covr
+  - rmarkdown
+  - testthat
+
+before_install:
+  - echo "TRAVIS_OS_NAME = $TRAVIS_OS_NAME"
+
+after_success:
+  - Rscript -e 'covr::codecov()'
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
