@@ -20,12 +20,11 @@ Function for downloading shape files. Downloads zip file, unzips and loads
 .shp file.
 }
 \examples{
-ckanr_setup("http://www.data.gov.au")
-metadata <- package_show("062801f2-dcf9-4a2d-b65b-52f20d4da721",
-                         as = "table",
-                         url = "http://www.data.gov.au")
+metadata <- ckanr::package_show("062801f2-dcf9-4a2d-b65b-52f20d4da721",
+                                as = "table",
+                                url = "http://www.data.gov.au")
 url <- metadata$resources[["url"]]
-dataset <- download_shape(url)
+dataset <- download_shapefile(url)
 }
 \author{
 Cameron Roach
