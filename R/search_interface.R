@@ -16,8 +16,16 @@
 # resources, tags, groups, organization, name, url, notes, owner_org,
 # data_state, title, contact_info
 
-ozdata_user_input <- function(){
+Y <- function(){
+    # Perform check for existing oz_metadata file
+    # [insert code for this check]
 
+    # Ask user if they want to download the lastest metadata (returns integere 1 for Yes or 2 for No)
+    dl_meta <- menu(c("Yes", "No"), title = "Do you want to download the latest data.gov.au metadata?")
+
+    if(dl_meta == 1, download_oz_metadata)
+    search_term <- readline(prompt = "Enter your keyword search term: ")
+    ?readline()
 library(shiny)
 
 # response <- utils::menu(c("Yes", "No"), title="Do you want this?", graphics = TRUE)
@@ -26,3 +34,4 @@ library(shiny)
 ?menu
 
 }  # end 'ozdata_user_input
+
