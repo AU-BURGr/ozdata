@@ -17,7 +17,7 @@
 #' url <- package_show('062801f2-dcf9-4a2d-b65b-52f20d4da721', as = 'table')$resources[["url"]]
 #' shape <- download_shape(url)
 #'
-download_shape <- function(url) {
+download_shape <- function(url, output_type == "sf") {
     tmp_dir <- "./cache"
     dir.create(tmp_dir, F, T)
     tmp_file <- file.path(tmp_dir, "file.zip")
