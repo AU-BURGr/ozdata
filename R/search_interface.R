@@ -17,6 +17,7 @@ ozdata_usr_srch <- function(){
     require(ckanr)
     require(shiny)
 
+    # Get users working directory for return at end.
     usr_dir <- getwd()
 
     # Set temporary working directory
@@ -27,31 +28,16 @@ ozdata_usr_srch <- function(){
     setwd(tmp_dir)
 
 
+
     # Define Shiny UI for application that asks for keyword search input
 
     # Need to sort out temporary allocation of Shiny ui and server files
-    myUI <- shinyUI(fluidPage(
-        require(shiny)
-        # text input box
-        textInput("text", label = h3("Input search keyword"), value = "Enter text..."),
 
-        hr(),
-        fluidRow(column(3, verbatimTextOutput("value")))
-    ))   # end Shiny UI definition
 
     write(myUI, file = "ui.R")
     write()
-    # Definite Shiny Server function
 
-    shinyServer(function(input, output) {
-
-        # You can access the value of the widget with input$text, e.g.
-        output$value <- renderPrint({ input$text })
-
-    }
-    )   # end Shiny Server defintion
-
-    runApp("shiny_app")
+    runApp("shinySearch")
 
     # Set up ckanr link to data.gov.au
     ckanr_setup(url="http://data.gov.au/")
