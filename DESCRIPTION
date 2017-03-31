@@ -3,12 +3,12 @@ Type: Package
 Title: Collect Australian data sets and work with them
 Version: 0.0.9000
 Authors@R: c(
- person("Jonathan", "Carroll", role = "aut", comment = "@jonocarroll"),
+ person("Jonathan", "Carroll", role = c("aut", "cre"), comment = "@jonocarroll"),
  person("Maria", "Dmitrijeva", role = "aut", comment = "@marianess"),
  person("Jeff", "Hanson", role = "aut", comment = "@jeffreyhanson"),
  person("Rob", "Hyndman", role = "aut", comment = "@robjhyndman"),
  person("Simon", "Lyons", role = "aut", comment = "@SimonLyons"),
- person("Cameron", "Roach", role = c("aut", "cre"), comment = "@camroach87"),
+ person("Cameron", "Roach", role = "aut", comment = "@camroach87"),
  person("Matt", "Sutton", role = "aut", comment = "@matt-sutton"))
 Description: Obtain data from data.gov.au and ozmacrodata.org, process it, plot it.
 License: GPL (>=3)
