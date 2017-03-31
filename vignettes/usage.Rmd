@@ -1,0 +1,30 @@
+---
+title: "ozdata"
+author: "ozdata"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ozdata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+Restore CKAN url to http://data.nhm.ac.uk
+
+```
+ckanr::ckanr_setup(url = "http://data.gov.au/")
+```
+
+List http://data.nhm.ac.uk availible packages 
+
+```
+ckanr::package_list(url = 'http://data.gov.au/',as = "table",limit = 50)
+```
+
+Get metadata for a specific package, let's say number 10
+
+```
+#[10] "01f26038-daed-4ba7-b1d8-efabc749cd17"    
+res <- ckanr::package_show("01f26038-daed-4ba7-b1d8-efabc749cd17", as = "table")
+```
+
+
