@@ -8,3 +8,19 @@
 
 
 
+# Data from user:
+# re-import metadata?
+# search keywords, organisation, name, id
+
+# maintainer, num_tags, id, author, author_email, state, contact_point,
+# resources, tags, groups, organization, name, url, notes, owner_org,
+# data_state, title, contact_info
+
+
+library(shiny)
+
+response <- utils::menu(c("Yes", "No"), title="Do you want this?", graphics = TRUE)
+
+# Input keyword
+?menu
+
