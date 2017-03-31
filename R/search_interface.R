@@ -3,10 +3,7 @@
 # the relevant dataset(s) from the data.gov.au
 # repository
 
-
 # oz_metadata  tibble file
-
-
 
 # Data from user:
 # re-import metadata?
@@ -18,6 +15,43 @@
 
 ozdata_usr_srch <- function(){
     require(ckanr)
+    require(shiny)
+
+    usr_dir <- getwd()
+
+    # Set temporary working directory
+    tmp_file <- tempfile()
+    tmp_dir <- file.path(tempdir(), basename(tempfile()))
+    dir.create(tmp_dir, showWarnings = FALSE, recursive = TRUE)
+    list.files(path = tmp_dir, pattern = ".$")
+    setwd(tmp_dir)
+
+
+    # Define Shiny UI for application that asks for keyword search input
+
+    # Need to sort out temporary allocation of Shiny ui and server files
+    myUI <- shinyUI(fluidPage(
+        require(shiny)
+        # text input box
+        textInput("text", label = h3("Input search keyword"), value = "Enter text..."),
+
+        hr(),
+        fluidRow(column(3, verbatimTextOutput("value")))
+    ))   # end Shiny UI definition
+
+    write(myUI, file = "ui.R")
+    write()
+    # Definite Shiny Server function
+
+    shinyServer(function(input, output) {
+
+        # You can access the value of the widget with input$text, e.g.
+        output$value <- renderPrint({ input$text })
+
+    }
+    )   # end Shiny Server defintion
+
+    runApp("shiny_app")
 
     # Set up ckanr link to data.gov.au
     ckanr_setup(url="http://data.gov.au/")
@@ -31,20 +65,20 @@ ozdata_usr_srch <- function(){
     changes(limit = 2, as = "table")[, 1:4]
 
 
-    # create temporary files and directories
-    tmp_file <- tempfile()
-    tmp_dir <- file.path(tempdir(), basename(tempfile()))
-    dir.create(tmp_dir, showWarnings = FALSE, recursive = TRUE)
-
     if(oz_meta_check = NULL){download_oz_metadata()}
     # Ask user if they want to download the lastest metadata (returns integere 1 for Yes or 2 for No)
     dl_meta <- menu(c("Yes", "No"), title = "Do you want to download the latest data.gov.au metadata?")
     # Download
     if(dl_meta == 1) {download_oz_metadata()}
     search_term <- readline(prompt = "Enter your keyword search term: ")
+    print("Do you want to search by group name, tag or keyword?")
     ?readline()
 
 
+    # Return working directory to user's original
+    setwd(usr_dir)
+
+    # Delete all temporary files and directories
 
 }  # end 'ozdata_user_input
 
