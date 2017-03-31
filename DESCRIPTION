@@ -18,16 +18,23 @@ Imports:
   methods,
   tibble,
   ckanr,
-  sf
+  sf,
+  readr,
+  rvest,
+  stringr,
+  xml2,
+  maptools
 Depends: R (>= 3.1.0)
 Suggests: 
   knitr,
-  rmarkdown
+  rmarkdown,
+  testthat
 URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 Collate:     'aaa.R'
     'ausmacrodata.R'
+    'download_shape.R'
     'internal.R'
     'oz_datasets.R'
