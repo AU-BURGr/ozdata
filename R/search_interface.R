@@ -20,7 +20,7 @@ ozdata_user_input <- function(){
 
 library(shiny)
 
-response <- utils::menu(c("Yes", "No"), title="Do you want this?", graphics = TRUE)
+# response <- utils::menu(c("Yes", "No"), title="Do you want this?", graphics = TRUE)
 
 # Input keyword
 ?menu
