@@ -1,2 +1,5 @@
-## common utilities
-## print("f")
+#' ozdata
+#'
+#' @name ozdata
+#' @docType package
+NULL
