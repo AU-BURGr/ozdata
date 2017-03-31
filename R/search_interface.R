@@ -42,6 +42,7 @@ ozdata_usr_srch <- function(){
     # Download
     if(dl_meta == 1) {download_oz_metadata()}
     search_term <- readline(prompt = "Enter your keyword search term: ")
+    print("Do you want to search by group name, tag or keyword?")
     ?readline()
 
 
