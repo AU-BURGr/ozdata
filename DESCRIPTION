@@ -60,3 +60,4 @@ Collate:
     'get_oz_dataset.R'
     'get_url.R'
     'get_url_dataset.R'
+    'search_metadata.R'
