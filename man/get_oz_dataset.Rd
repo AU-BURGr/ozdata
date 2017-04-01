@@ -25,7 +25,7 @@ Get data set from Australian data portal
 \details{
 If argument to \code{x} is a \code{character} then the
  input is assumed to be the data set id. If it is a \code{data.frame}
- then the ids are accessesed from it \code{data.frame}.
+ then the ids are accessed from it \code{data.frame}.
 }
 \examples{
 \donttest{

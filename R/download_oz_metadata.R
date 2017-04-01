@@ -34,7 +34,8 @@ download_oz_metadata <- function(max_results = 1000) {
   metadata <- plyr::llply(starts, .progress = "text", function(i) {
     # download chunk as json
     d <- ckanr::package_search(as = "json",
-                               rows  = ifelse(max_results < 1e3L, max_results, 1e3L), start = i,
+                               rows  = ifelse(max_results < 1e3L,
+                                              max_results, 1e3L), start = i,
                                # rows  = ifelse(max_results < 1e2L, max_results, 1e2L), start = i,
                                url = "https://data.gov.au")
 
@@ -96,9 +97,12 @@ download_oz_metadata <- function(max_results = 1000) {
         gather_array() %>%
         spread_values(group = jstring("title")) -> grp
 
-    tbm <- suppressMessages(merge(tbj, tglist, by = "toplevel_id", all.x = TRUE))
-    tbm <- suppressMessages(merge(tbm, orgs, by = "toplevel_id", all.x = TRUE))
-    tbm <- suppressMessages(merge(tbm, grp, by = "toplevel_id", all.x = TRUE))
+    tbm <- suppressMessages(merge(tbj, tglist, by = "toplevel_id",
+                                  all.x = TRUE))
+    tbm <- suppressMessages(merge(tbm, orgs, by = "toplevel_id",
+                                  all.x = TRUE))
+    tbm <- suppressMessages(merge(tbm, grp, by = "toplevel_id",
+                                  all.x = TRUE))
 
         # return tbl_json
         return(tbm)
@@ -106,7 +110,8 @@ download_oz_metadata <- function(max_results = 1000) {
 
   ## remove the tidyjson columns
   metadata <- dplyr::bind_rows(metadata) %>%
-      dplyr::select(-dplyr::starts_with("document.id"), -dplyr::starts_with("array.index"))
+      dplyr::select(-dplyr::starts_with("document.id"),
+                    -dplyr::starts_with("array.index"))
 
   ## nest the data sub-matrix
   metadata_tbl <- suppressMessages(

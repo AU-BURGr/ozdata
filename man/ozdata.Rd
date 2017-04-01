@@ -23,5 +23,6 @@ Authors:
 \item \href{https://github.com/matt-sutton}{Matt Sutton}
 }
 
-For a general overview of the steps taken to produce this, see \code{vignette("ozdata")}.
+For a general overview of the steps taken to produce this, see
+\code{vignette("ozdata")}.
 }
