@@ -19,6 +19,7 @@ Authors:
 \item \href{https://github.com/robjhyndman}{Rob Hyndman}
 \item \href{https://github.com/SimonLyons}{Simon Lyons}
 \item \href{https://github.com/camroach87}{Cameron Roach}
+\item \href{https://github.com/adamhsparks}{Adam H Sparks}
 \item \href{https://github.com/matt-sutton}{Matt Sutton}
 }
 

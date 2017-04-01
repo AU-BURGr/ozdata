@@ -35,9 +35,9 @@ get_oz_dataset.character <- function(x,  progress = "text", ...) {
   assertthat::assert_that(is.character(x), length(x) > 0, all(!is.na(x)))
   d <- plyr::llply(x, .progress = progress, ..., .fun = function(x) {
     urls <- get_url(x)
-    setNames(plyr::llply(urls, get_url_dataset), urls)
+    stats::setNames(plyr::llply(urls, get_url_dataset), urls)
   })
-  setNames(d, x)
+  stats::setNames(d, x)
 }
 
 #' @export

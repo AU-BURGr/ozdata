@@ -23,6 +23,7 @@ globalVariables(c("id", "package_id", "data_url", "toplevel_id"))
 #' }
 #' @export
 download_oz_metadata <- function(max_results = 1000) {
+
   # download first data set
   search <- ckanr::package_search(as = "table", rows = 1, start = 1,
                                   url = "https://data.gov.au")
@@ -40,38 +41,43 @@ download_oz_metadata <- function(max_results = 1000) {
                                # rows  = ifelse(max_results < 1e2L, max_results, 1e2L), start = i,
                                url = "https://data.gov.au")
 
-    ## create the relevant columns using tidyjson syntax
-    d %>%
-        enter_object("result") %>%
-        enter_object("results") %>%
-        gather_array() %>%
-        spread_values(license_title = jstring("license_title"),
-                      jurisdiction = jstring("jurisdiction"),
-                      author = jstring("author"),
-                      contact_point = jstring("contact_point"),
-                      toplevel_id = jstring("id"),
-                      notes = jstring("notes")) %>%
-        enter_object("resources") %>%
-        gather_array() %>%
-        spread_values(package_id = jstring("package_id"),
-                      id = jstring("id"),
-                      size = jstring("size"),
-                      description = jstring("description"),
-                      name = jstring("name"),
-                      created = jstring("created"),
-                      data_url = jstring("url")) %>%
-        as.tbl_json() -> tbj
+        ## create the relevant columns using tidyjson syntax
+        d %>%
+            enter_object("result") %>%
+            enter_object("results") %>%
+            gather_array() %>%
+            spread_values(
+                license_title = jstring("license_title"),
+                jurisdiction = jstring("jurisdiction"),
+                author = jstring("author"),
+                contact_point = jstring("contact_point"),
+                toplevel_id = jstring("id"),
+                notes = jstring("notes")
+            ) %>%
+            enter_object("resources") %>%
+            gather_array() %>%
+            spread_values(
+                package_id = jstring("package_id"),
+                id = jstring("id"),
+                size = jstring("size"),
+                description = jstring("description"),
+                name = jstring("name"),
+                created = jstring("created"),
+                data_url = jstring("url")
+            ) %>%
+            as.tbl_json() -> tbj
 
-    # extract the tags and concatenate them
-    d %>%
-        enter_object("result") %>%
-        enter_object("results") %>%
-        gather_array() %>%
-        spread_values(toplevel_id = jstring("id")) %>%
-        enter_object("tags") %>%
-        gather_array() %>%
-        spread_values(name = jstring("name")) %>%
-        dplyr::group_by(toplevel_id) %>% dplyr::summarise(tags = toString(name)) -> tglist
+        # extract the tags and concatenate them
+        d %>%
+            enter_object("result") %>%
+            enter_object("results") %>%
+            gather_array() %>%
+            spread_values(toplevel_id = jstring("id")) %>%
+            enter_object("tags") %>%
+            gather_array() %>%
+            spread_values(name = jstring("name")) %>%
+            dplyr::group_by(toplevel_id) %>%
+            dplyr::summarise(tags = toString(name)) -> tglist
 
     # extract organisation
     d %>%
@@ -97,9 +103,9 @@ download_oz_metadata <- function(max_results = 1000) {
     tbm <- suppressMessages(merge(tbm, orgs, by = "toplevel_id", all.x = TRUE))
     tbm <- suppressMessages(merge(tbm, grp, by = "toplevel_id", all.x = TRUE))
 
-    # return tbl_json
-    return(tbm)
-  })
+        # return tbl_json
+        return(tbm)
+    })
 
   ## remove the tidyjson columns
   metadata <- dplyr::bind_rows(metadata) %>%
@@ -116,7 +122,8 @@ download_oz_metadata <- function(max_results = 1000) {
                            )
   )
 
-  # compile and return metadata as tibble
-  # tibble::as_tibble(plyr::rbind.fill(metadata))
-  return(metadata_tbl)
+
+    # compile and return metadata as tibble
+    # tibble::as_tibble(plyr::rbind.fill(metadata))
+    return(metadata_tbl)
 }

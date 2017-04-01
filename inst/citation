@@ -1,0 +1,15 @@
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(bibtype = "Manual",
+         title = "{getCRUCL2.0}: Download and Use CRU CL v. 2.0 Climatology Data in R",
+         author = c(person("Jonathan", "Carroll", role = c("aut", "cre"), comment = "@jonocarroll", email = "rpkg@jcarroll.com.au"),
+         person("Maria", "Dmitrijeva", role = "aut", comment = "@marianess"),
+         person("Jeffrey O.", "Hanson", role = "aut", comment = "@jeffreyhanson"),
+         person("Rob", "Hyndman", role = "aut", comment = "@robjhyndman"),
+         person("Simon", "Lyons", role = "aut", comment = "@SimonLyons"),
+         person("Cameron", "Roach", role = "aut", comment = "@camroach87"),
+         person("Adam H.", "Sparks", role = "aut", comment = "@adamhsparks"),
+         person("Matt", "Sutton", role = "aut", comment = "@matt-sutton")),
+         year = 2017,
+         note = note,
+         url = "https://github.com/AU-BURGr/ozdata")

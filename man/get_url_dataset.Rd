@@ -14,7 +14,7 @@ that is greater than 100 Mb in size, should the data set still be
 downloaded?.}
 }
 \value{
-\code{\link[tibble]{tbl_df}} or \code{\link[sf]{sfc}}
+\code{\link[tibble]{tibble}} or \code{\link[sf]{sfc}}
   object.
 }
 \description{

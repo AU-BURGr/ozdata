@@ -1,44 +1,62 @@
-Package: ozdata
 Type: Package
-Title: Collect Australian data sets and work with them
+Package: ozdata
+Title: Import and explore freely available Australian data sets
 Version: 0.0.9000
-Authors@R: c(
- person("Jonathan", "Carroll", role = c("aut", "cre"), comment = "@jonocarroll", email = "rpkg@jcarroll.com.au"),
- person("Maria", "Dmitrijeva", role = "aut", comment = "@marianess"),
- person("Jeff", "Hanson", role = "aut", comment = "@jeffreyhanson"),
- person("Rob", "Hyndman", role = "aut", comment = "@robjhyndman"),
- person("Simon", "Lyons", role = "aut", comment = "@SimonLyons"),
- person("Cameron", "Roach", role = "aut", comment = "@camroach87"),
- person("Matt", "Sutton", role = "aut", comment = "@matt-sutton"))
-Description: Obtain data from data.gov.au and ausmacrodata.org, process it, plot it.
-License: GPL (>=3)
-Encoding: UTF-8
-LazyData: true
-Imports: 
-  methods,
-  plyr,
-  tibble,
-  tibble,
-  ckanr,
-  sf,
-  magrittr,
-  tidyr,
-  tidyjson
-Depends: R (>= 3.1.0)
-Suggests: 
-  knitr,
-  rmarkdown,
-  rio
+Authors@R (parsed):
+    * Jonathan Carroll <rpkg@jcarroll.com.au> [aut, cre] (@jonocarroll)
+    * Maria Dmitrijeva [aut] (@marianess)
+    * Jeffrey O. Hanson [aut] (@jeffreyhanson)
+    * Rob Hyndman [aut] (@robjhyndman)
+    * Simon Lyons [aut] (@SimonLyons)
+    * Cameron Roach [aut] (@camroach87)
+    * Adam H. Sparks [aut] (@adamhsparks)
+    * Matt Sutton [aut] (@matt-sutton)
+Description: There are many high quality data sets that are freely
+    available for Australia. Unfortunately they can be difficult to obtain
+    and analyse.  Here we provide tools to programmatically import and
+    explore Australian data sets.  Data can be obtained from the official
+    Australian government portal, which contains over 40,000 data sets
+    (<https://data.gov.au>).  Additionally, economic data sets can be
+    obtained from the Australian Macro Database
+    (<http://ozmacrodata.org>). This project was created during the 2017
+    BURGr R UnConference <https://github.com/AU-BURGr/UnConf2017>.
+License: GPL(>=3) + file LICENSE
 URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
+Depends:
+    R (>= 3.1.0)
+Imports:
+    assertthat,
+    ckanr,
+    data.table,
+    dplyr,
+    magrittr,
+    methods,
+    RCurl,
+    readr,
+    rvest,
+    stringr,
+    plyr,
+    tibble,
+    sf,
+    tidyr,
+    tidyjson,
+    xml2,
+    xts
+Suggests:
+    knitr,
+    rmarkdown,
+    rio
 VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: true
 RoxygenNote: 6.0.1
-Collate:     'aaa.R'
+Collate:
+    'aaa.R'
     'ausmacrodata.R'
     'internal.R'
     'data.R'
     'download_oz_metadata.R'
-    'download_shapefile.R'
     'get_oz_dataset.R'
     'get_url.R'
     'get_url_dataset.R'
