@@ -16,13 +16,13 @@ Encoding: UTF-8
 LazyData: true
 Imports:
   methods,
-  asserttthat,
+  assertthat,
   RCurl,
   plyr,
   tibble,
   ckanr,
   data.table,
-  sf,
+  sf
 Depends: R (>= 3.1.0)
 Suggests:
   rio,
