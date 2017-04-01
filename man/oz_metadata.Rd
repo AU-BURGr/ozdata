@@ -4,7 +4,7 @@
 \name{oz_metadata}
 \alias{oz_metadata}
 \title{Meta data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 41675 rows and 58 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1000 rows and 9 columns.}
 \usage{
 data(oz_metadata)
 }

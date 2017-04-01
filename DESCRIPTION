@@ -22,7 +22,8 @@ Imports:
   ckanr,
   sf,
   magrittr,
-  tidyr
+  tidyr,
+  tidyjson
 Depends: R (>= 3.1.0)
 Suggests: 
   knitr,
@@ -38,3 +39,6 @@ Collate:     'aaa.R'
     'data.R'
     'download_oz_metadata.R'
     'download_shapefile.R'
+    'get_oz_dataset.R'
+    'get_url.R'
+    'get_url_dataset.R'

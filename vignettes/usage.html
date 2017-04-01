@@ -36,23 +36,35 @@
 
 
 
-<p>ozdata package provides access to <code>http://data.gov.au/</code>, <code>http://ausmacrodata.org/</code> and allows downloading shape files.</p>
+<p>The package ozdata allows seaching and retrieving data from <code>http://data.gov.au/</code> and <code>http://ausmacrodata.org/</code>.</p>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
 <pre><code>install.packages(&quot;ozdata&quot;)
 library(ozdata)</code></pre>
+<p>Development version from GitHub</p>
+<pre><code>if (!require(devtools))
+  install.packages(devtools)
+devtools::install_github(&quot;AU-BUGRr/ozdata&quot;)</code></pre>
 </div>
 <div id="usage" class="section level2">
 <h2>Usage</h2>
 <div id="download_shape" class="section level3">
 <h3>download_shape()</h3>
-<p>Dowload metadata for data Restore CKAN url to <code>http://data.nhm.ac.uk</code></p>
-<pre><code>ckanr::ckanr_setup(url = &quot;http://data.gov.au/&quot;)</code></pre>
-<p>List <code>http://data.nhm.ac.uk</code> availible packages</p>
-<pre><code>ckanr::package_list(url = 'http://data.gov.au/',as = &quot;table&quot;,limit = 50)</code></pre>
-<p>Get metadata for a specific package, let’s say number 10</p>
-<pre><code>#[10] &quot;01f26038-daed-4ba7-b1d8-efabc749cd17&quot;    
-res &lt;- ckanr::package_show(&quot;01f26038-daed-4ba7-b1d8-efabc749cd17&quot;, as = &quot;table&quot;)</code></pre>
+<p>download_shape function returns sf objects.</p>
+</div>
+<div id="download_oz_metadata" class="section level3">
+<h3>download_oz_metadata()</h3>
+</div>
+<div id="get_ausmacrodata" class="section level3">
+<h3>get_ausmacrodata()</h3>
+<p>The <code>ausmacrodata.org</code> contains macroeconomic data from the ABS and RBA. Every ausmacrodata series have unique ID and can be loaded either by using full URL or only series ID. The first argument is either full URL or ID. The subsequent argument specifies in what format data should be returned: <code>tibble</code>, <code>ts</code> or <code>xts</code>, whereas <code>ts</code> is a default format for quaterly data and <code>xts</code> for daily data.</p>
+<pre><code># Load the job vacancies data in New South Wales between 1983-2017
+# 'jvnswjvstoq' is a unique ID of this series
+dat &lt;- get_ausmacrodata('jvnswjvstoq')
+
+#plot the seris
+library(xts)
+plot(dat)</code></pre>
 </div>
 </div>
 

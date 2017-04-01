@@ -18,7 +18,7 @@ Meta-data for all Australian datasets on \url{https://data.gov.au}.
 \examples{
 \donttest{
 # download latest version of metadata
-metadata <- download_oz_metadata()
+metadata <- download_oz_metadata(max_results = 100)
 # print first 10 rows of data set
 head(metadata)
 }
