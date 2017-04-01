@@ -11,7 +11,7 @@ get_ausmacrodata(dataset, format, ...)
 
 \item{format}{The desired format for the object to be returned. Possible
 values are \code{ts}, \code{xts} and \code{tibble}. By default a \code{ts}
-object is returned for quarterly, monthly or annual data, and a
+object is returned for quarterly, monthly or annual data, and an
 \code{xts} object is returned for daily data.}
 
 \item{...}{Other arguments, not currently used.}

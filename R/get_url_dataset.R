@@ -39,7 +39,7 @@ get_url_dataset <- function(url, force = FALSE) {
   # create temporary files and directories
   tmp_dir <- file.path(tempdir(), basename(tempfile()))
   dir.create(tmp_dir, showWarnings = FALSE, recursive = TRUE)
-  utils::download.file(url, file.path(tmp_dir, "archive.zip"))
+  utils::download.file(x, file.path(tmp_dir, "archive.zip"))
   # unzip file
   utils::unzip(file.path(tmp_dir, "archive.zip"), exdir = tmp_dir,
                junkpaths = TRUE)
