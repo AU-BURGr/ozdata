@@ -13,7 +13,7 @@ download_oz_metadata(max_results = 1000)
 \code{link[tibble]{tibble}} table.
 }
 \description{
-Meta-data for all Australian datasets on \url{https://data.gov.au}.
+Meta-data for all Australian datasets on \url{https://data.gov.au}. Collecting all of the meta-data entries will take quite some time.
 }
 \examples{
 \donttest{
