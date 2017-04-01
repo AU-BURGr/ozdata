@@ -38,7 +38,7 @@ devtools::install_github("AU-BUGRr/ozdata")
 
 *  Please [report any issues or bugs](https://github.com/AU-BURGr/ozdata/issues).  
     
-* License: GPL (>=3)  
+* License: GPL(>=3) + file LICENSE
     
 * Get citation information for _ozdata_ in R typing `citation(package = "ozdata")`  
 
