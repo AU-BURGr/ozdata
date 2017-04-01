@@ -19,5 +19,5 @@ test_that("test url ", {
 })
 
 
-# wrong URLget_ausmacrodata("http://yahoo.com/series.php?id=gdpcknaasaq")
+# wrong URL placed into get_ausmacrodata("http://yahoo.com/series.php?id=gdpcknaasaq")
 # but series get downloaded by their ID.
