@@ -8,32 +8,41 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-ozdata package provides access to `http://data.gov.au/`, `http://ausmacrodata.org/` and allows downloading shape files.
+The package ozdata allows seaching and retrieving data from `http://data.gov.au/` and `http://ausmacrodata.org/`.
 
 ##Installation
 ```
 install.packages("ozdata")
 library(ozdata)
 ```
+Development version from GitHub
+```
+if (!require(devtools))
+  install.packages(devtools)
+devtools::install_github("AU-BUGRr/ozdata")
+```
 
 ##Usage
 ###download_shape()
+download_shape function returns sf objects.
+
+###download_oz_metadata()
+
+###get_ausmacrodata()
+The `ausmacrodata.org` contains macroeconomic data from the ABS and RBA. Every ausmacrodata series have unique ID and can be loaded either by using full URL or only series ID. The first argument is either full URL or ID. The subsequent argument specifies in what format data should be returned: `tibble`, `ts` or `xts`, whereas `ts` is a default format for quaterly data and `xts` for daily data.
+
+```
+# Load the job vacancies data in New South Wales between 1983-2017
+# 'jvnswjvstoq' is a unique ID of this series
+dat <- get_ausmacrodata('jvnswjvstoq')
+
+#plot the seris
+library(xts)
+plot(dat)
+```
 
 
-Dowload metadata for data
-Restore CKAN url to `http://data.nhm.ac.uk`
-```
-ckanr::ckanr_setup(url = "http://data.gov.au/")
-```
-List `http://data.nhm.ac.uk` availible packages 
-```
-ckanr::package_list(url = 'http://data.gov.au/',as = "table",limit = 50)
-```
-Get metadata for a specific package, let's say number 10
-```
-#[10] "01f26038-daed-4ba7-b1d8-efabc749cd17"    
-res <- ckanr::package_show("01f26038-daed-4ba7-b1d8-efabc749cd17", as = "table")
-```
+
 
 
 
