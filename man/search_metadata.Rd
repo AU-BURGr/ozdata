@@ -15,5 +15,6 @@ search_metadata(metadata = NULL, search)
 a \code{tibble} of metadata rows which match the search
 }
 \description{
-Runs \code{grepl} over the \code{tags} column of the metadata file and returns matching rows
+Runs \code{grepl} over the \code{tags} column of the metadata file and returns matching
+rows
 }
