@@ -8,7 +8,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-The package ozdata allows seaching and retrieving data from `http://data.gov.au/` and `http://ausmacrodata.org/`.
+The package `ozdata` allows seaching and retrieving data from `http://data.gov.au/` and `http://ausmacrodata.org/`.
 
 ##Installation
 ```
@@ -23,13 +23,14 @@ devtools::install_github("AU-BUGRr/ozdata")
 ```
 
 ##Usage
-###download_shape()
-download_shape function returns sf objects.
+###get_url_dataset()
+The function `get_url_dataset` allows downloading, unzipping and saving files with .shp and .csv extensions from `data.gov.au`. The first argument passed to function `get_url_dataset()` is the URL of the data. If file size is larger than 100 Mb and needs to be dowloaded, you can specify the second argument as `forced=TRUE` to proceed with dowloading.
 
-###download_oz_metadata()
+```
+```
 
 ###get_ausmacrodata()
-The `ausmacrodata.org` contains macroeconomic data from the ABS and RBA. Every ausmacrodata series have unique ID and can be loaded either by using full URL or only series ID. The first argument is either full URL or ID. The subsequent argument specifies in what format data should be returned: `tibble`, `ts` or `xts`, whereas `ts` is a default format for quaterly data and `xts` for daily data.
+The `ausmacrodata.org` contains macroeconomic data from the ABS and RBA. Every ausmacrodata series have unique ID and can be loaded either by using full URL or only series ID. The first argument is either full URL or ID. The subsequent argument specifies in what format data should be returned: `tibble`, `ts` or `xts`, whereas `ts` is a default format for quarterly data and `xts` for daily data.
 
 ```
 # Load the job vacancies data in New South Wales between 1983-2017
@@ -38,6 +39,7 @@ dat <- get_ausmacrodata('jvnswjvstoq')
 
 #plot the seris
 library(xts)
+class(dat)
 plot(dat)
 ```
 
