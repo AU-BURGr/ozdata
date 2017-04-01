@@ -26,7 +26,8 @@ Imports:
 Depends: R (>= 3.1.0)
 Suggests: 
   knitr,
-  rmarkdown
+  rmarkdown,
+  rio
 URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 VignetteBuilder: knitr
