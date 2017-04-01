@@ -8,10 +8,10 @@
 
 ## Overview
 
-This project was created during the `#ozunconf17` unconference.
+There are many high quality data sets that are freely available for Australia. Unfortunately they can be difficult to obtain and analyse.  Here we provide tools to programmatically import and explore Australian data sets. Data can be obtained from the official Australian government portal, which contains over 40,000 data sets (https://data.gov.au). Additionally, economic data sets can be obtained from the Australian Macro Database (http://ozmacrodata.org). This project was created during the 2017 BURGr R UnConference https://github.com/AU-BURGr/UnConf2017.
 
 ## Installation
-This package uses the [_sf_ R package](https://github.com/edzer/sfr) and the [units R package](https://github.com/edzer/units). Please see the packages' websites for instructions on installing them.
+This package uses the [_sf_ package](https://github.com/edzer/sfr) and the [units package](https://github.com/edzer/units). Please see the packages' websites for instructions on installing them.
 
 To install the developmental version of _ozdata_, use the following R code:
 
@@ -24,8 +24,7 @@ devtools::install_github("AU-BUGRr/ozdata")
 ## Example usage
 
 
-## Authors:
-
+## Contributors
 - [Jonathan Carroll](https://github.com/jonocarroll)
 - [Maria Dmitrijeva](https://github.com/marianess)
 - [Jeff Hanson](https://github.com/jeffreyhanson)
@@ -34,3 +33,14 @@ devtools::install_github("AU-BUGRr/ozdata")
 - [Cameron Roach](https://github.com/camroach87)
 - [Adam Sparks](https://github.com/adamhsparks)
 - [Matt Sutton](https://github.com/matt-sutton)
+
+## Meta
+
+*  Please [report any issues or bugs](https://github.com/AU-BURGr/ozdata/issues).  
+    
+* License: GPL (>=3)  
+    
+* Get citation information for _ozdata_ in R typing `citation(package = "ozdata")`  
+
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
