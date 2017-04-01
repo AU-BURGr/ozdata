@@ -33,15 +33,13 @@ URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
-Collate:
+Collate: 
     'aaa.R'
     'ausmacrodata.R'
     'internal.R'
     'data.R'
     'download_oz_metadata.R'
     'download_shapefile.R'
-<<<<<<< Updated upstream
-=======
+    'get_oz_dataset.R'
+    'get_url.R'
     'get_url_dataset.R'
-    'search_interface.R'
->>>>>>> Stashed changes
