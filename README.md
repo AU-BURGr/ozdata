@@ -15,7 +15,7 @@ This package uses the [_sf_ package](https://github.com/edzer/sfr) and the [unit
 
 To install the developmental version of _ozdata_, use the following R code:
 
-```
+```r
 if (!require(devtools))
   install.packages(devtools)
 devtools::install_github("AU-BUGRr/ozdata")
