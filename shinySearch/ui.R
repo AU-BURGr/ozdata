@@ -22,14 +22,7 @@ myUI <- shinyUI(fluidPage(
         # Insert drop down box with data.gov.au catetegory selections
         column(12,
                selectInput("select", label = h5("data.gov.au groups"),
-                           choices = list("No selection" = 1, "Civic" = 2,
-                                          "Cultural" = 3, "Defence" = 4,
-                                          "Environment" = 5, "Finance" = 6,
-                                          "Health" = 7, "Immigration" = 8),
-                                            selected = 1)),
-
-        # There has to be a better way for formatting this break....
-        br(), br(), br(), br(), br(),
+                           choices = group_var, selected = 1)),
 
         # Insert BUGr image and licence conditions
         img(src="highres_456807711.png", height = 40, width = 40), "BURGr UnConf 2017",
