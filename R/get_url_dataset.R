@@ -6,7 +6,7 @@ NULL
 #' Download and import a data set from a URL. This function assumes that the
 #' URL points to a zip archive.
 #'
-#' @param x \code{character} URL containing data to download and import.
+#' @param url \code{character} URL containing data to download and import.
 #'
 #' @param force \code{logical} If the argument to \code{x} contains a data set
 #'   that is greater than 100 Mb in size, should the data set still be
