@@ -1,4 +1,5 @@
 require(shiny)
+require(tibble)
 
 myUI <- shinyUI(fluidPage(
 
@@ -24,7 +25,8 @@ myUI <- shinyUI(fluidPage(
                            choices = list("No selection" = 1, "Civic" = 2,
                                           "Cultural" = 3, "Defence" = 4,
                                           "Environment" = 5, "Finance" = 6,
-                                          "Health" = 7, "Immigration" = 8), selected = 1)),
+                                          "Health" = 7, "Immigration" = 8),
+                                            selected = 1)),
 
         # There has to be a better way for formatting this break....
         br(), br(), br(), br(), br(),
@@ -35,15 +37,26 @@ myUI <- shinyUI(fluidPage(
         ),   # end 'sidebarPanel'
 
         # Define shiny Main Panel
-        mainPanel(h4("Main Panel - yet to be defined", align = "center"),
-                  p("This area will be used to display search output tables"),
+        mainPanel(
+            tabsetPanel(
+                tabPanel("Search Results",
+                         h4("Main Panel - yet to be defined", align = "center"),
+                         p("This area will be used to display search output tables"),
+                         # Call in
+                         textOutput("value1"), br(),
+                         textOutput("text1"), br(),
+                         textOutput("text2")   # Reactive output from server.R file
+                        ),
+                tabPanel("Results",
+                         tableOutput("table")
 
-                  testOutput("value1"),
-                  textOutput("text1"),
-                  textOutput("text2")   # Reactive output from server.R file
+                         )
+
+
+
                   )   # end 'mainPanel'
 
     )   # end 'sidebarLayout'
 
-))   # end Shiny UI definition
+)))   # end Shiny UI definition
 
