@@ -20,7 +20,7 @@ Description: There are many high quality data sets that are freely
     obtained from the Australian Macro Database
     (<http://ozmacrodata.org>). This project was created during the 2017
     BURGr R UnConference <https://github.com/AU-BURGr/UnConf2017>.
-License: GPL (>=3)
+License: GPL(>=3) + file LICENSE
 URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 Depends:
