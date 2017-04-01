@@ -9,21 +9,30 @@ Authors@R: c(
  person("Rob", "Hyndman", role = "aut", comment = "@robjhyndman"),
  person("Simon", "Lyons", role = "aut", comment = "@SimonLyons"),
  person("Cameron", "Roach", role = "aut", comment = "@camroach87"),
+ person("Adam", "Sparks", role = "aut", comment = "@adamhsparks"),
  person("Matt", "Sutton", role = "aut", comment = "@matt-sutton"))
 Description: Obtain data from data.gov.au and ausmacrodata.org, process it, plot it.
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
 Imports: 
+  assertthat,
+  ckanr,
+  data.table,
+  dplyr,
+  magrittr,
   methods,
+  RCurl,
+  readr,
+  rvest,
+  stringr,
   plyr,
   tibble,
-  tibble,
-  ckanr,
   sf,
-  magrittr,
   tidyr,
-  tidyjson
+  tidyjson,
+  xml2,
+  xts
 Depends: R (>= 3.1.0)
 Suggests: 
   knitr,
@@ -33,12 +42,12 @@ URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
-Collate:     'aaa.R'
+Collate: 
+    'aaa.R'
     'ausmacrodata.R'
     'internal.R'
     'data.R'
     'download_oz_metadata.R'
-    'download_shapefile.R'
     'get_oz_dataset.R'
     'get_url.R'
     'get_url_dataset.R'

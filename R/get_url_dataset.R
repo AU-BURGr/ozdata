@@ -12,7 +12,7 @@ NULL
 #'   that is greater than 100 Mb in size, should the data set still be
 #'   downloaded?.
 #'
-#' @return \code{\link[tibble]{tbl_df}} or \code{\link[sf]{sfc}}
+#' @return \code{\link[tibble]{tibble}} or \code{\link[sf]{sfc}}
 #'   object.
 #'
 #' @examples

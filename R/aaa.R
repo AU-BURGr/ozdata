@@ -12,6 +12,7 @@
 #' * [Rob Hyndman](https://github.com/robjhyndman)
 #' * [Simon Lyons](https://github.com/SimonLyons)
 #' * [Cameron Roach](https://github.com/camroach87)
+#' * [Adam H Sparks](https://github.com/adamhsparks)
 #' * [Matt Sutton](https://github.com/matt-sutton)
 #'
 #' For a general overview of the steps taken to produce this, see `vignette("ozdata")`.
