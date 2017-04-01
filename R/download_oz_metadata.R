@@ -17,32 +17,51 @@ NULL
 #' head(metadata)
 #' }
 #' @export
-download_oz_metadata <- function() {
+download_oz_metadata <- function(max_results = 1000) {
   # download first data set
   search <- ckanr::package_search(as = "table", rows = 1, start = 1,
                                   url = "https://data.gov.au")
   # extract number of datasets
-  n <- search$count
+  n <- min(search$count, max_results)
+  # n <- 100
   # get starts for each chunk
   starts <- seq(1, n, 1e+3)
   # download metadata in chunks
   metadata <- plyr::llply(starts, .progress = "text", function(i) {
     # download chunk
-    d <- ckanr::package_search(as = "table",
+    d <- ckanr::package_search(as = "json",
                                rows  = 1e+3, start = i,
-                               url = "https://data.gov.au")$results
-    # add data in columns that are a data.frame as columns to the table
-    df_columns <- vapply(d, inherits, logical(1), "data.frame")
-    for (j in names(df_columns)[which(df_columns)]) {
-      # extract columns
-      for (k in names(d[[j]]))
-        d[[paste0(j, "_", k)]] <- d[[j]][[k]]
-      # delete column
-      d[[j]] <- NULL
-    }
-    # return data.frame
-    return(d)
+                               url = "https://data.gov.au")
+
+    # dt <- jsonlite::fromJSON(d)$result$results %>%
+    #     select(-organization) %>%
+    #     as_tibble()
+
+    # jsonlite::fromJSON(d, simplifyDataFrame = TRUE)
+
+    d %>%
+        enter_object("result") %>%
+        enter_object("results") %>%
+        gather_array() %>%
+        spread_values(license_title = jstring("license_title"),
+                      jurisdiction = jstring("jurisdiction"),
+                      author = jstring("author"),
+                      contact_point = jstring("contact_point")) %>%
+        enter_object("resources") %>%
+        gather_array() %>%
+        spread_values(package_id = jstring("package_id"),
+                      id = jstring("id"),
+                      size = jstring("size"),
+                      description = jstring("description"),
+                      name = jstring("name"),
+                      created = jstring("created"),
+                      data_url = jstring("url")) %>%
+        as.tbl_json() -> tbj
+
+    # return tibble
+    return(tbj)
   })
   # compile and return metadata as tibble
-  tibble::as_tibble(plyr::rbind.fill(metadata))
+  # tibble::as_tibble(plyr::rbind.fill(metadata))
+  return(metadata)
 }
