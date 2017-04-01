@@ -20,7 +20,9 @@ Imports:
   tibble,
   tibble,
   ckanr,
-  sf
+  sf,
+  magrittr,
+  tidyr
 Depends: R (>= 3.1.0)
 Suggests: 
   knitr,

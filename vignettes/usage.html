@@ -12,7 +12,7 @@
 
 <meta name="author" content="ozdata" />
 
-<meta name="date" content="2017-03-31" />
+<meta name="date" content="2017-04-01" />
 
 <title>ozdata</title>
 
@@ -32,17 +32,29 @@
 
 <h1 class="title toc-ignore">ozdata</h1>
 <h4 class="author"><em>ozdata</em></h4>
-<h4 class="date"><em>2017-03-31</em></h4>
+<h4 class="date"><em>2017-04-01</em></h4>
 
 
 
-<p>Restore CKAN url to <a href="http://data.nhm.ac.uk" class="uri">http://data.nhm.ac.uk</a></p>
+<p>ozdata package provides access to <code>http://data.gov.au/</code>, <code>http://ausmacrodata.org/</code> and allows downloading shape files.</p>
+<div id="installation" class="section level2">
+<h2>Installation</h2>
+<pre><code>install.packages(&quot;ozdata&quot;)
+library(ozdata)</code></pre>
+</div>
+<div id="usage" class="section level2">
+<h2>Usage</h2>
+<div id="download_shape" class="section level3">
+<h3>download_shape()</h3>
+<p>Dowload metadata for data Restore CKAN url to <code>http://data.nhm.ac.uk</code></p>
 <pre><code>ckanr::ckanr_setup(url = &quot;http://data.gov.au/&quot;)</code></pre>
-<p>List <a href="http://data.nhm.ac.uk" class="uri">http://data.nhm.ac.uk</a> availible packages</p>
+<p>List <code>http://data.nhm.ac.uk</code> availible packages</p>
 <pre><code>ckanr::package_list(url = 'http://data.gov.au/',as = &quot;table&quot;,limit = 50)</code></pre>
 <p>Get metadata for a specific package, let’s say number 10</p>
 <pre><code>#[10] &quot;01f26038-daed-4ba7-b1d8-efabc749cd17&quot;    
 res &lt;- ckanr::package_show(&quot;01f26038-daed-4ba7-b1d8-efabc749cd17&quot;, as = &quot;table&quot;)</code></pre>
+</div>
+</div>
 
 
 

@@ -4,10 +4,10 @@
 \alias{download_oz_metadata}
 \title{Download meta-data}
 \usage{
-download_oz_metadata()
+download_oz_metadata(max_results = 1000)
 }
 \arguments{
-\item{cache}{Should metadata be loaded from cache? Defaults to \code{TRUE}.}
+\item{max_results}{Maximum results to return. Set to \code{Inf} for everything (40,000+).}
 }
 \value{
 \code{link[tibble]{tibble}} table.

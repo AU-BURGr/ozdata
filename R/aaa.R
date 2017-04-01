@@ -20,3 +20,7 @@
 #' @name ozdata
 #' @docType package
 NULL
+
+#' @importFrom magrittr %>%
+#' @export
+magrittr::`%>%`
