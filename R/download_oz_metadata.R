@@ -1,7 +1,4 @@
-#' @include internal.R
-NULL
-
-#' Download meta-data
+#' Download meta-data from data.gov.au
 #'
 #' Meta-data for all Australian datasets on \url{https://data.gov.au}.
 #'

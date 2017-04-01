@@ -2,7 +2,7 @@
 % Please edit documentation in R/download_oz_metadata.R
 \name{download_oz_metadata}
 \alias{download_oz_metadata}
-\title{Download meta-data}
+\title{Download meta-data from data.gov.au}
 \usage{
 download_oz_metadata(max_results = 1000)
 }

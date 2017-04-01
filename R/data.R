@@ -1,6 +1,3 @@
-#' @include internal.R
-NULL
-
 #' Meta data
 #'
 #' Meta-data for all data on \url{http://data.gov.au}.

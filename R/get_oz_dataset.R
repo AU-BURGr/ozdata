@@ -1,6 +1,3 @@
-#' @include internal.R
-NULL
-
 #' Get data set from Australian data portal
 #'
 #' @param x \code{character} or \code{data.frame} object that contains

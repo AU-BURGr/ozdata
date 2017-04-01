@@ -1,6 +1,3 @@
-#' @include internal.R
-NULL
-
 #' Get a data set from a URL
 #'
 #' Download and import a data set from a URL. This function assumes that the

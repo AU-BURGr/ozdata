@@ -4,19 +4,19 @@
 \name{ozdata}
 \alias{ozdata}
 \alias{ozdata-package}
-\title{ozdata: Collect Australian data sets and work with them}
+\title{ozdata: Import and explore freely available Australian data sets}
 \description{
 Obtain data from data.gov.au and ozmacrodata.org, process it, plot it.
 }
 \details{
-Created as part of the ozdata17 unconf in Brisbane, Australia.
+Created as part of the 2017 BURGr R UnConference in Brisbane, Australia.
 
 Authors:
 \itemize{
 \item \href{https://github.com/jonocarroll}{Jonathan Carroll}
 \item \href{https://github.com/marianess}{Maria Dmitrijeva}
-\item \href{https://github.com/jeffreyhanson}{Jeff Hanson}
-\item \href{https://github.com/robjhyndman}{Rob Hyndman}
+\item \href{https://github.com/jeffreyhanson}{Jeffrey O. Hanson}
+\item \href{https://github.com/robjhyndman}{Rob J. Hyndman}
 \item \href{https://github.com/SimonLyons}{Simon Lyons}
 \item \href{https://github.com/camroach87}{Cameron Roach}
 \item \href{https://github.com/adamhsparks}{Adam H Sparks}
