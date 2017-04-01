@@ -6,11 +6,11 @@
 [![Coverage Status](https://codecov.io/github/AU-BURGr/ozdata/coverage.svg?branch=master)](https://codecov.io/github/AU-BURGr/ozdata?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/ozdata)](https://CRAN.R-project.org/package=ozdata)
 
-### Overview
+## Overview
 
 This project was created during the `#ozunconf17` unconference.
 
-### Installation
+## Installation
 This package uses the [_sf_ R package](https://github.com/edzer/sfr) and the [units R package](https://github.com/edzer/units). Please see the packages' websites for instructions on installing them.
 
 To install the developmental version of _ozdata_, use the following R code:
@@ -21,7 +21,7 @@ if (!require(devtools))
 devtools::install_github("AU-BUGRr/ozdata")
 ```
 
-### Example usage
+## Example usage
 
 
 ## Authors:
