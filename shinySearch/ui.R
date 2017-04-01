@@ -5,10 +5,12 @@ myUI <- shinyUI(fluidPage(
     titlePanel("Search ozdata.gov.au"),
 
     sidebarLayout(
+        # Sidebar panel which contains the input options for user selection
         sidebarPanel(
             helpText("Welcome to the R Project interface for searching Australian government open data."),
             br(),
-        # text input box
+
+        # text search input box
         textInput("text", label = h5("Input search keyword"), value = "Enter text..."),
 
         hr(),
@@ -35,8 +37,9 @@ myUI <- shinyUI(fluidPage(
         ),   # end 'sidebarPanel'
 
         mainPanel(h4("Main Panel - yet to be defined", align = "center"),
-                  p("This area will be used to display search output tables")
+                  p("This area will be used to display search output tables"),
 
+                  textOutput("text1")   # Reactive output from server.R file
                   )   # end 'mainPanel'
 
     )   # end 'sidebarLayout'
