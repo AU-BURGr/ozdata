@@ -13,7 +13,11 @@ test_that("test url ", {
                  "HTTP error 404.")
     expect_error(get_ausmacrodata("string"),
                  "HTTP error 404.")
+    expect_error(get_ausmacrodata(NULL))
+    expect_error(get_ausmacrodata(12))
+
 })
 
-#get_ausmacrodata("http://yahoo.com/series.php?id=gdpcknaasaq")
 
+# wrong URLget_ausmacrodata("http://yahoo.com/series.php?id=gdpcknaasaq")
+# but series get downloaded by their ID.
