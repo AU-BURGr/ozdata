@@ -51,7 +51,14 @@ devtools::install_github(&quot;AU-BUGRr/ozdata&quot;)</code></pre>
 <div id="get_url_dataset" class="section level3">
 <h3>get_url_dataset()</h3>
 <p>The function <code>get_url_dataset</code> allows downloading, unzipping and saving files with .shp and .csv extensions from <code>data.gov.au</code>. The first argument passed to function <code>get_url_dataset()</code> is the URL of the data. If file size is larger than 100 Mb and needs to be dowloaded, you can specify the second argument as <code>forced=TRUE</code> to proceed with dowloading.</p>
-<pre><code></code></pre>
+<pre><code># Save the data URL into variable
+url &lt;- paste0(&quot;https://datagovau.s3.amazonaws.com/bioregionalassessm&quot;,
+               &quot;ents/LEB/PED/DATA/Resources/Other/110_Context_statement&quot;,
+               &quot;NTGAB_Selected_Wetlands/062801f2-dcf9-4a2d-b65b-52f20d4&quot;,
+               &quot;da721.zip&quot;)
+
+# pass variable url to the function and save as an object
+y &lt;- get_url_dataset(url)</code></pre>
 </div>
 <div id="get_ausmacrodata" class="section level3">
 <h3>get_ausmacrodata()</h3>

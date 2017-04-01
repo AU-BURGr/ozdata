@@ -44,6 +44,7 @@ download_oz_metadata <- function(max_results = 1000) {
             enter_object("results") %>%
             gather_array() %>%
             spread_values(
+                title = jstring("title"),
                 license_title = jstring("license_title"),
                 jurisdiction = jstring("jurisdiction"),
                 author = jstring("author"),
