@@ -27,6 +27,14 @@ devtools::install_github("AU-BUGRr/ozdata")
 The function `get_url_dataset` allows downloading, unzipping and saving files with .shp and .csv extensions from `data.gov.au`. The first argument passed to function `get_url_dataset()` is the URL of the data. If file size is larger than 100 Mb and needs to be dowloaded, you can specify the second argument as `forced=TRUE` to proceed with dowloading.
 
 ```
+# Save the data URL into variable
+url <- paste0("https://datagovau.s3.amazonaws.com/bioregionalassessm",
+               "ents/LEB/PED/DATA/Resources/Other/110_Context_statement",
+               "NTGAB_Selected_Wetlands/062801f2-dcf9-4a2d-b65b-52f20d4",
+               "da721.zip")
+
+# pass variable url to the function and save as an object
+y <- get_url_dataset(url)
 ```
 
 ###get_ausmacrodata()
