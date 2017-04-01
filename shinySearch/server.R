@@ -1,4 +1,5 @@
 require(shiny)
+require(MASS)
 
 shinyServer(function(input, output) {
 
@@ -14,10 +15,9 @@ shinyServer(function(input, output) {
 
     # Output table for UScereals
     output$table <- renderTable({
-        as_data_frame(read.csv(file = "shinySearch/data/UScereal.csv"))
+        #as_data_frame(read.csv(file = "shinySearch/data/UScereal.csv"))
+    as_data_frame(UScereals)
 
     })   # End US cereals table output
-
-
 
 })   # end Shiny Server defintion
