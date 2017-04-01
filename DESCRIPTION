@@ -2,15 +2,15 @@ Type: Package
 Package: ozdata
 Title: Import and explore freely available Australian data sets
 Version: 0.0.9000
-Authors@R: c(
- person("Jonathan", "Carroll", role = c("aut", "cre"), comment = "@jonocarroll", email = "rpkg@jcarroll.com.au"),
- person("Maria", "Dmitrijeva", role = "aut", comment = "@marianess"),
- person("Jeffrey O.", "Hanson", role = "aut", comment = "@jeffreyhanson"),
- person("Rob J.", "Hyndman", role = "aut", comment = "@robjhyndman"),
- person("Simon", "Lyons", role = "aut", comment = "@SimonLyons"),
- person("Cameron", "Roach", role = "aut", comment = "@camroach87"),
- person("Adam H.", "Sparks", role = "aut", comment = "@adamhsparks"),
- person("Matt", "Sutton", role = "aut", comment = "@matt-sutton"))
+Authors@R (parsed):
+    * Jonathan Carroll <rpkg@jcarroll.com.au> [aut, cre] (@jonocarroll)
+    * Maria Dmitrijeva [aut] (@marianess)
+    * Jeffrey O. Hanson [aut] (@jeffreyhanson)
+    * Rob Hyndman [aut] (@robjhyndman)
+    * Simon Lyons [aut] (@SimonLyons)
+    * Cameron Roach [aut] (@camroach87)
+    * Adam H. Sparks [aut] (@adamhsparks)
+    * Matt Sutton [aut] (@matt-sutton)
 Description: There are many high quality data sets that are freely
     available for Australia. Unfortunately they can be difficult to obtain
     and analyse.  Here we provide tools to programmatically import and
@@ -51,13 +51,13 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Collate: 
+Collate:
     'aaa.R'
     'ausmacrodata.R'
     'data.R'
     'download_oz_metadata.R'
+    'get_dataset_from_url.R'
     'get_oz_dataset.R'
     'get_url.R'
-    'get_url_dataset.R'
     'ozdata.R'
     'search_metadata.R'

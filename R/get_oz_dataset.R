@@ -15,7 +15,7 @@
 #'
 #' @details If argument to \code{x} is a \code{character} then the
 #'  input is assumed to be the data set id. If it is a \code{data.frame}
-#'  then the ids are accessesed from it \code{data.frame}.
+#'  then the ids are accessed from it \code{data.frame}.
 #'
 #' @examples
 #' \donttest{
@@ -32,7 +32,7 @@ get_oz_dataset.character <- function(x,  progress = "text", ...) {
   assertthat::assert_that(is.character(x), length(x) > 0, all(!is.na(x)))
   d <- plyr::llply(x, .progress = progress, ..., .fun = function(x) {
     urls <- get_url(x)
-    stats::setNames(plyr::llply(urls, get_url_dataset), urls)
+    stats::setNames(plyr::llply(urls, get_dataset_from_url), urls)
   })
   stats::setNames(d, x)
 }

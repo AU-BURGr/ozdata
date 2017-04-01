@@ -1,6 +1,7 @@
 #' search_metadata
 #'
-#' Runs `grepl` over the `tags` column of the metadata file and returns matching rows
+#' Runs `grepl` over the `tags` column of the metadata file and returns matching
+#' rows
 #'
 #' @md
 #' @param metadata a metadata table to search
@@ -16,7 +17,8 @@ search_metadata <- function(metadata = NULL, search) {
     stopifnot(!is.null(metadata))
 
     ## find 'search' in the tags column
-    pos_matches <- metadata %>% dplyr::filter(grepl(search, .$tags, ignore.case = TRUE))
+    pos_matches <- metadata %>%
+        dplyr::filter(grepl(search, .$tags, ignore.case = TRUE))
 
     return(pos_matches)
 

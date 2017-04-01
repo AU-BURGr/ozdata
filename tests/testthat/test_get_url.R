@@ -12,6 +12,6 @@ test_that("object", {
 })
 
 test_that("invalid arguments", {
-    expect_error(get_url_dataset("awefuiaweunfaweofasdfjk"))
-    expect_error(get_url_dataset("www.ozdata.com"))
+    expect_error(get_url("awefuiaweunfaweofasdfjk"))
+    expect_error(get_url("www.ozdata.com"))
 })

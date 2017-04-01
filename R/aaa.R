@@ -15,7 +15,8 @@
 #' * [Adam H Sparks](https://github.com/adamhsparks)
 #' * [Matt Sutton](https://github.com/matt-sutton)
 #'
-#' For a general overview of the steps taken to produce this, see `vignette("ozdata")`.
+#' For a general overview of the steps taken to produce this, see
+#' `vignette("ozdata")`.
 #'
 #' @md
 #' @name ozdata
