@@ -27,11 +27,11 @@ devtools::install_github("AU-BUGRr/ozdata")
 ## Contributors
 - [Jonathan Carroll](https://github.com/jonocarroll)
 - [Maria Dmitrijeva](https://github.com/marianess)
-- [Jeff Hanson](https://github.com/jeffreyhanson)
+- [Jeffrey O. Hanson](https://github.com/jeffreyhanson)
 - [Rob Hyndman](https://github.com/robjhyndman)
 - [Simon Lyons](https://github.com/SimonLyons)
 - [Cameron Roach](https://github.com/camroach87)
-- [Adam Sparks](https://github.com/adamhsparks)
+- [Adam H. Sparks](https://github.com/adamhsparks)
 - [Matt Sutton](https://github.com/matt-sutton)
 
 ## Meta
