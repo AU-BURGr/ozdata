@@ -1,6 +1,6 @@
 # TODO use standard evaluation for dplyr commands
 
-globalVariables(c("id", "package_id", "data_url", "toplevel_id"))
+globalVariables(c("id", "package_id", "data_url", "toplevel_id", "name", "."))
 #' Download meta-data from data.gov.au
 #'
 #' Meta-data for all Australian datasets on \url{https://data.gov.au}. Collecting all of the meta-data entries will take quite some time.
@@ -106,7 +106,7 @@ download_oz_metadata <- function(max_results = 1000) {
 
   ## remove the tidyjson columns
   metadata <- dplyr::bind_rows(metadata) %>%
-      dplyr::select(-starts_with("document.id"), -starts_with("array.index"))
+      dplyr::select(-dplyr::starts_with("document.id"), -dplyr::starts_with("array.index"))
 
   ## nest the data sub-matrix
   metadata_tbl <- suppressMessages(

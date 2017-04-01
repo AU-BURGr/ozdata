@@ -10,7 +10,6 @@
 #'
 #' @export
 #'
-#' @examples
 search_metadata <- function(metadata = NULL, search) {
 
     ## requires some data
