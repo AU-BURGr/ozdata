@@ -16,23 +16,32 @@ Encoding: UTF-8
 LazyData: true
 Imports:
   methods,
+  asserttthat,
+  RCurl,
   plyr,
   tibble,
-  tibble,
   ckanr,
-  sf
+  data.table,
+  sf,
 Depends: R (>= 3.1.0)
 Suggests:
+  rio,
   knitr,
+  testthat,
   rmarkdown
 URL: https://github.com/AU-BURGr/ozdata
 BugReports: https://github.com/AU-BURGr/ozdata/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
-Collate: 
+Collate:
     'aaa.R'
     'ausmacrodata.R'
     'internal.R'
     'data.R'
     'download_oz_metadata.R'
     'download_shapefile.R'
+<<<<<<< Updated upstream
+=======
+    'get_url_dataset.R'
+    'search_interface.R'
+>>>>>>> Stashed changes
