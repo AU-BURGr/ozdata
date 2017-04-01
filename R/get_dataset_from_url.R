@@ -17,10 +17,10 @@
 #'               "ents/LEB/PED/DATA/Resources/Other/110_Context_statement",
 #'               "NTGAB_Selected_Wetlands/062801f2-dcf9-4a2d-b65b-52f20d4",
 #'               "da721.zip")
-#' dataset <- get_url_dataset(url)
+#' dataset <- get_dataset_from_url(url)
 #'
 #' @export
-get_url_dataset <- function(x, force = FALSE) {
+ get_dataset_from_url <- function(x, force = FALSE) {
   ## assert input is valid
   # check arguments
   assertthat::assert_that(assertthat::is.string(x), assertthat::is.flag(force))
@@ -42,15 +42,28 @@ get_url_dataset <- function(x, force = FALSE) {
                junkpaths = TRUE)
   # delete archive
   unlink(file.path(tmp_dir, "archive.zip"))
+  # find all zip files in zip file and unzip them
+  zip_files <- dir(path = tmp_dir, pattern = ".zip$", full.names = TRUE,
+                   recursive = TRUE)
+  if (length(zip_files) > 0) {
+    tmp_dir <- file.path(tempdir(), basename(tempfile()))
+    dir.create(tmp_dir, showWarnings = FALSE, recursive = TRUE)
+    sapply(zip_files, utils::unzip, exdir = tmp_dir, junkpaths = TRUE)
+  }
+  # delete zip files
+  unlink(zip_files)
   ## Import data
   output <- list()
+  output_names <- c()
   # list files in folder
-  files <- dir(path = tmp_dir, full.names = TRUE)
+  files <- dir(path = tmp_dir, full.names = TRUE, recursive = TRUE)
   # find .csv files
   csv_path <- grep(".csv$", files, value = TRUE)
-  if (length(csv_path) > 0)
+  if (length(csv_path) > 0) {
     output <- append(output, lapply(csv_path, data.table::fread,
                                     data.table = FALSE))
+    output_names <- c(output_names, basename(csv_path))
+  }
   files <- files[!files %in% csv_path]
   # coerce data.frames to tibbles
   df_objects <- which(sapply(output, class) == "data.frame")
@@ -59,8 +72,10 @@ get_url_dataset <- function(x, force = FALSE) {
   # check if data contains a shapefiles
   shapefile_path <- grep(".shp$", files, value = TRUE)
   # if directory contains shape files then load it
-  if (length(shapefile_path) > 0)
+  if (length(shapefile_path) > 0) {
     output <- append(output, lapply(shapefile_path, sf::st_read, quiet = TRUE))
+    output_names <- c(output_names, basename(shapefile_path))
+  }
   # remove shapefile paths
   shapefile_path <- gsub(".shp", "", shapefile_path, fixed = TRUE)
   shapefile_path <- c(paste0(shapefile_path, ".shp"),
@@ -74,13 +89,17 @@ get_url_dataset <- function(x, force = FALSE) {
   # load remaining datasets
   if (length(files) > 0) {
     if (requireNamespace("rio", quietly = TRUE)) {
-      output <- suppressWarnings(append(output, lapply(files, rio::import)))
+      output <- suppressWarnings(append(output, lapply(files, function(x)
+                                                      try(rio::import(x)))))
+      output_names <- c(output_names, basename(files))
     } else {
       warning("archive contains the following files that are not supported.",
               " Install the rio package to import them: ",
               paste(files, collapse = ","), ".")
     }
   }
+  ## assign names to output
+  names(output) <- output_names
   ## return object
   return(output)
 }
