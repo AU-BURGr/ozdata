@@ -11,7 +11,7 @@ test_that("test class ", {
 test_that("test url ", {
     expect_error(get_ausmacrodata("http://ausmacrodata.org/series.php?id=gdpcknaasaq33782371"),
                  "HTTP error 404.")
-    expect_error(get_ausmacrodata("string!"),
+    expect_error(get_ausmacrodata("string"),
                  "HTTP error 404.")
 })
 
