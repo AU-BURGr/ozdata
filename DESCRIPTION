@@ -40,8 +40,4 @@ Collate:
     'data.R'
     'download_oz_metadata.R'
     'download_shapefile.R'
-<<<<<<< Updated upstream
-=======
     'get_url_dataset.R'
-    'search_interface.R'
->>>>>>> Stashed changes
