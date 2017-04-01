@@ -1,9 +1,11 @@
 require(shiny)
 require(tibble)
+require(shinythemes)
 
-myUI <- shinyUI(fluidPage(
 
-    titlePanel("Search ozdata.gov.au"),
+myUI <- shinyUI(fluidPage(theme = shinytheme("cerulean"),
+
+    titlePanel("Search data.gov.au"),
 
     sidebarLayout(
         # Sidebar panel which contains the input options for user selection
@@ -13,6 +15,14 @@ myUI <- shinyUI(fluidPage(
 
         # text search input box
         textInput("text", label = h5("Input search keyword"), value = "Enter text..."),
+
+        # dropdown for ids
+        selectInput("oz_id",
+                    label = h5("Package ID"),
+                    choices = NULL,
+                    multiple = FALSE),
+        actionButton("button_get_data", "Get data"),
+
 
         # Insert date range selection option
         fluidRow(
@@ -33,16 +43,16 @@ myUI <- shinyUI(fluidPage(
         mainPanel(
             tabsetPanel(
                 tabPanel("Search Results",
-                         h4("Main Panel - yet to be defined", align = "center"),
+                         h4("Metadata", align = "center"),
                          p("This area will be used to display search output tables"),
                          # Call in
                          textOutput("value1"), br(),
                          textOutput("text1"), br(),
-                         textOutput("text2")   # Reactive output from server.R file
+                         textOutput("text2"), br(),  # Reactive output from server.R file
+                         dataTableOutput("table_metadata")
                         ),
-                tabPanel("Results",
-                         tableOutput("table")
-
+                tabPanel("URLs",
+                         verbatimTextOutput("react_test")
                          )
 
 

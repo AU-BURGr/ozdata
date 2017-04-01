@@ -1,8 +1,28 @@
 require(shiny)
 require(MASS)
 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, clientData, session) {
+    observe({
+        ids <- oz_metadata$package_id #%>%
+            #dplyr::filter()
 
+        updateSelectInput(session,
+                          "oz_id",
+                          choices = ids,
+                          selected = ids)
+    })
+
+
+    #### Reactives ====
+    react_data <- eventReactive(input$button_get_data, {
+        url <- get_url(id = input$oz_id)
+        return(url)
+        #data <- get_url_dataset(url)
+        #return(data)
+    })
+
+
+    #### Outputs ====
     output$value1 <- renderText({ paste("Your search term(s) are:  ",  input$text) })
 
     output$text1 <- renderText({
@@ -13,11 +33,12 @@ shinyServer(function(input, output) {
         paste("Your date range is ", input$dates[[1]], " to ", input$dates[[2]])
     })
 
-    # Output table for UScereals
-    output$table <- renderTable({
-        #as_data_frame(read.csv(file = "shinySearch/data/UScereal.csv"))
-    as_data_frame(UScereals)
+    output$table_metadata <- renderDataTable({
+        oz_metadata
+    })
 
-    })   # End US cereals table output
+    output$react_test <- renderPrint({
+        react_data()
+    })
 
-})   # end Shiny Server defintion
+})
