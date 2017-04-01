@@ -23,12 +23,12 @@ NULL
 #' dataset <- get_url_dataset(url)
 #'
 #' @export
-get_url_dataset <- function(x, force = FALSE) {
+get_url_dataset <- function(url, force = FALSE) {
   ## assert input is valid
   # check arguments
-  assertthat::assert_that(assertthat::is.string(x), assertthat::is.flag(force))
+  assertthat::assert_that(assertthat::is.string(url), assertthat::is.flag(force))
   # check that url exists
-  url_properties <- RCurl::url.exists(x, .header = TRUE)
+  url_properties <- RCurl::url.exists(url, .header = TRUE)
   if (identical(url_properties, FALSE))
     stop("url does not exist")
   # check that data set is not too big
