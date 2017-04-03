@@ -42,7 +42,8 @@ Imports:
     tidyr,
     tidyjson,
     xml2,
-    xts
+    xts,
+    shiny
 Suggests:
     knitr,
     rmarkdown,
