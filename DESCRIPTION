@@ -42,7 +42,9 @@ Imports:
     tidyr,
     tidyjson,
     xml2,
-    xts
+    xts,
+    mapview,
+    rgdal
 Suggests:
     knitr,
     rmarkdown,
@@ -62,3 +64,4 @@ Collate:
     'get_url.R'
     'ozdata.R'
     'search_metadata.R'
+    'all_in_one.R'
