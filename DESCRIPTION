@@ -31,25 +31,26 @@ Imports:
     data.table,
     dplyr,
     magrittr,
+    mapview,
     methods,
+    plyr,
     RCurl,
     readr,
+    rgdal,
     rvest,
-    stringr,
-    plyr,
-    tibble,
     sf,
+    shiny,
+    shinythemes,
+    stringr,
+    tibble,
     tidyr,
     tidyjson,
     xml2,
-    xts,
-    shiny,
-    mapview,
-    rgdal
+    xts
 Suggests:
     knitr,
-    rmarkdown,
     rio,
+    rmarkdown,
     testthat
 VignetteBuilder: knitr
 Encoding: UTF-8

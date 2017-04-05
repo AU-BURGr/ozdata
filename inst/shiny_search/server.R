@@ -34,7 +34,8 @@ shinyServer(function(input, output, clientData, session) {
 
 
     #### Outputs ====
-    output$value1 <- renderText({ paste("Your search term(s) are:  ",  input$text) })
+    output$value1 <- renderText({paste("Your search term(s) are:  ",
+                                       input$text) })
 
     output$text1 <- renderText({
         paste("You have selected", input$select)

@@ -4,7 +4,7 @@ require(shinythemes)
 
 
 myUI <- shinyUI(fluidPage(
-    theme = shinytheme("cerulean"),
+    theme = shinythemes::shinytheme("cerulean"),
 
     titlePanel("Search data.gov.au"),
 

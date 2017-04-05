@@ -12,7 +12,11 @@ A shiny application
 \description{
 This function runs the shiny search app for data.gov.au.
 }
+\examples{
+\donttest{
+run_shiny_search()
+}
+}
 \author{
 Simon Lyons, Cameron Roach
 }
-
