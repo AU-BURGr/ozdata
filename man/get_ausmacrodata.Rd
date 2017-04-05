@@ -4,7 +4,7 @@
 \alias{get_ausmacrodata}
 \title{Read data from ausmacrodata.org}
 \usage{
-get_ausmacrodata(dataset, format, ...)
+get_ausmacrodata(dataset, format)
 }
 \arguments{
 \item{dataset}{a URL for a specific data set on ausmacrodata.org, or an id for a data set.}
@@ -13,11 +13,9 @@ get_ausmacrodata(dataset, format, ...)
 values are \code{ts}, \code{xts} and \code{tibble}. By default a \code{ts}
 object is returned for quarterly, monthly or annual data, and an
 \code{xts} object is returned for daily data.}
-
-\item{...}{Other arguments, not currently used.}
 }
 \description{
-\code{get_ausmacrodata} returns a time series data set from \url{ausmacrodata.org}.
+\code{get_ausmacrodata} returns a time series data set from \url{http://ausmacrodata.org}.
 }
 \examples{
 # Read quarterly Australia GDP using full URL

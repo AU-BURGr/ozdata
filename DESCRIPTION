@@ -2,7 +2,7 @@ Type: Package
 Package: ozdata
 Title: Import and explore freely available Australian data sets
 Version: 0.0.9000
-Authors@R: c(person("Jonathan", "Carroll", role = c("aut", "cre"), 
+Authors@R: c(person("Jonathan", "Carroll", role = c("aut", "cre"),
         comment = "@jonocarroll", email = "rpkg@jcarroll.com.au"),
  person("Maria", "Dmitrijeva", role = "aut", comment = "@marianess"),
  person("Jeffrey O.", "Hanson", role = "aut", comment = "@jeffreyhanson"),
@@ -30,6 +30,7 @@ Imports:
     ckanr,
     data.table,
     dplyr,
+    jsonlite,
     magrittr,
     mapview,
     methods,
@@ -59,6 +60,7 @@ RoxygenNote: 6.0.1
 Collate:
     'aaa.R'
     'ausmacrodata.R'
+    'ausmacrodatasearch.R'
     'data.R'
     'download_oz_metadata.R'
     'get_dataset_from_url.R'

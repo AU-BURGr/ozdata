@@ -1,13 +1,12 @@
 #' Read data from ausmacrodata.org
 #'
-#' \code{get_ausmacrodata} returns a time series data set from \url{ausmacrodata.org}.
+#' \code{get_ausmacrodata} returns a time series data set from \url{http://ausmacrodata.org}.
 #'
 #' @param dataset a URL for a specific data set on ausmacrodata.org, or an id for a data set.
 #' @param format The desired format for the object to be returned. Possible
 #' values are \code{ts}, \code{xts} and \code{tibble}. By default a \code{ts}
 #' object is returned for quarterly, monthly or annual data, and an
 #' \code{xts} object is returned for daily data.
-#' @param ... Other arguments, not currently used.
 #'
 #' @author Rob J Hyndman
 #'
@@ -22,7 +21,7 @@
 #' library(xts)
 #' plot(z)
 
-get_ausmacrodata <- function(dataset, format, ...) {
+get_ausmacrodata <- function(dataset, format) {
   # Find last occurrence of "=" in dataset
   id <- utils::tail(strsplit(dataset, "=")[[1]], 1)
 
