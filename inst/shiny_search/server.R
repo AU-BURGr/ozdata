@@ -18,7 +18,7 @@ shinyServer(function(input, output, clientData, session) {
     react_metadata <- reactive({
         if (input$select_organisation != "All") {
             oz_metadata %>%
-                filter(organization == input$select_organisation)
+                dplyr::filter(organization == input$select_organisation)
         } else {
             oz_metadata
         }
