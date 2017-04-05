@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' run_shiny_search()
 #' }
 run_shiny_search <- function()

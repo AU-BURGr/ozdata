@@ -13,7 +13,7 @@ A shiny application
 This function runs the shiny search app for data.gov.au.
 }
 \examples{
-\donttest{
+\dontrun{
 run_shiny_search()
 }
 }

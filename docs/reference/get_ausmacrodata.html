@@ -115,8 +115,8 @@ object is returned for quarterly, monthly or annual data, and an
 #&gt; <span class='message'>  vard = col_character(),</span>
 #&gt; <span class='message'>  vardd = col_character()</span>
 #&gt; <span class='message'>)</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 1 parsing failure.</span>
-#&gt; <span class='warning'>row col  expected    actual</span>
-#&gt; <span class='warning'>  3  -- 4 columns 5 columns</span></div><div class='input'><span class='fu'>plot</span>(<span class='no'>y</span>)</div><img src='get_ausmacrodata-5.png' alt='' width='540' height='400' /><div class='input'>
+#&gt; <span class='warning'>row col  expected    actual                                                  file</span>
+#&gt; <span class='warning'>  3  -- 4 columns 5 columns 'http://ausmacrodata.org/Data/5206.0/gdpcknaasaq.csv'</span></div><div class='input'><span class='fu'>plot</span>(<span class='no'>y</span>)</div><img src='get_ausmacrodata-5.png' alt='' width='540' height='400' /><div class='input'>
 <span class='co'># Read daily cash rate target interest rate using only series ID</span>
 <span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'>get_ausmacrodata</span>(<span class='st'>'crtdoirymmdir'</span>)</div><div class='output co'>#&gt; <span class='message'>Parsed with column specification:</span>
 #&gt; <span class='message'>cols(</span>
@@ -124,10 +124,8 @@ object is returned for quarterly, monthly or annual data, and an
 #&gt; <span class='message'>  value = col_double(),</span>
 #&gt; <span class='message'>  vard = col_character(),</span>
 #&gt; <span class='message'>  vardd = col_character()</span>
-#&gt; <span class='message'>)</span></div><div class='input'><span class='fu'>library</span>(<span class='no'>xts</span>)</div><div class='output co'>#&gt; <span class='message'>Loading required package: zoo</span></div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Attaching package: ‘zoo’</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:base’:</span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>    as.Date, as.Date.numeric</span></div><div class='input'><span class='fu'>plot</span>(<span class='no'>z</span>)</div><img src='get_ausmacrodata-13.png' alt='' width='540' height='400' /></pre>
+#&gt; <span class='message'>)</span></div><div class='input'><span class='fu'>library</span>(<span class='no'>xts</span>)
+<span class='fu'>plot</span>(<span class='no'>z</span>)</div><img src='get_ausmacrodata-9.png' alt='' width='540' height='400' /></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
