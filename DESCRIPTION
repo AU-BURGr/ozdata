@@ -43,7 +43,9 @@ Imports:
     tidyjson,
     xml2,
     xts,
-    shiny
+    shiny,
+    mapview,
+    rgdal
 Suggests:
     knitr,
     rmarkdown,
@@ -64,3 +66,4 @@ Collate:
     'ozdata.R'
     'search_metadata.R'
     'run_shiny_search.R'
+    'all_in_one.R'
