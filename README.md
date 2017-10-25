@@ -18,7 +18,7 @@ To install the developmental version of _ozdata_, use the following R code:
 ```r
 if (!require(devtools))
   install.packages(devtools)
-devtools::install_github("AU-BUGRr/ozdata")
+devtools::install_github("AU-burgr/ozdata")
 ```
 
 ## Example usage
