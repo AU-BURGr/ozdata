@@ -45,7 +45,7 @@ The `ausmacrodata.org` contains macroeconomic data from the ABS and RBA. Every a
 # 'jvnswjvstoq' is a unique ID of this series
 dat <- get_ausmacrodata('jvnswjvstoq')
 
-#plot the seris
+#plot the series
 library(xts)
 class(dat)
 plot(dat)
